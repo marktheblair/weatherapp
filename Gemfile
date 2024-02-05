@@ -43,6 +43,11 @@ gem 'jbuilder'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+gem 'bootstrap', '~> 5.1.3'
+
+# Use Sass to process CSS
+gem 'sassc-rails'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
