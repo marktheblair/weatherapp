@@ -1,0 +1,51 @@
+<%= render partial: "header", locals: { name: 'New Address' } %>
+
+<%= form_with model: @address do |form| %>
+<div class="card">
+  <div class="card-body">
+    <div class="form-group">
+      <%= form.label :name %><br>
+      <%= form.text_field :name, class: "form-control" %>
+      <% @address.errors.full_messages_for(:name).each do |message| %>
+        <div class="alert alert-danger"><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :street %><br>
+      <%= form.text_field :street, class: "form-control" %>
+      <% @address.errors.full_messages_for(:street).each do |message| %>
+        <div class="alert alert-danger"><%= message %></div>
+      <% end %> 
+    </div>
+
+   <div class="form-row">
+     <div class="form-group col-md-2">
+        <%= form.label :city %><br>
+        <%= form.text_field :city, class: "form-control" %>
+        <% @address.errors.full_messages_for(:city).each do |message| %>
+          <div class="alert alert-danger"><%= message %></div>
+        <% end %> 
+      </div>
+
+      <div class="form-group col-md-2">
+        <%= form.label :state %><br>
+        <%= form.text_field :state, class: "form-control" %>
+        <% @address.errors.full_messages_for(:state).each do |message| %>
+          <div class="alert alert-danger"><%= message %></div>
+        <% end %> 
+      </div>
+
+      <div class="form-group col-md-2">
+        <%= form.label :zipcode %><br>
+        <%= form.text_field :zipcode, class: "form-control" %>
+        <% @address.errors.full_messages_for(:zipcode).each do |message| %>
+          <div class="alert alert-danger"><%= message %></div>
+        <% end %> 
+      </div>
+    </div>  
+    <br>
+    <%= form.submit "Create", class: "btn btn-primary" %>
+  </div>  
+</div>
+<% end %>

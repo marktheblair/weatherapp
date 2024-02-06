@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Current Weather 
+      <% if weather[:cached] %>
+        <span class="badge rounded-pill bg-warning">Cached</span>
+      <% end %> 
+    </h3>
+  </div>  
+  <div class="card-body">
+    <div class="mb-3">
+      <table>
+        <tr ALIGN=TOP>  
+          <td >Time:</td> 
+          <td><%= weather[:dt].in_time_zone(weather[:timezone]).strftime('%-m/%-d/%Y %-I:%M %p (%Z)') %></td>
+        </tr>
+        <tr ALIGN=TOP>  
+          <td >Conditions:</td> 
+          <td> <%= weather[:description] %></td>
+        </tr>
+        <tr ALIGN=TOP>  
+          <td>Temp:</td> 
+          <td> <%= weather[:temp] %> F</td>
+        </tr>
+        <tr ALIGN=TOP>  
+          <td>Max Temp: </td> 
+          <td> <%= weather[:temp_max] %> F</td>
+        </tr>
+        <tr ALIGN=TOP>  
+          <td>Min Temp: </td> 
+          <td> <%= weather[:temp_min] %> F</td>
+        </tr>
+      </table>    
+    </div>
+  </div>
+</div>     
+  
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Forcast</h3>
+  </div>  
+  <div class="card-body">
+    <div class="mb-3">   
+      <% weather[:forcast].each do | date_forcast| %>
+        <%= render partial: "weather_forcast", locals: { heading:  date_forcast[:date].strftime('%-m/%-d/%Y'), forcasts: date_forcast[:forcasts], timezone: weather[:timezone]   } %>
+      <% end %>       
+      </div>
+  </div>
+</div>     
