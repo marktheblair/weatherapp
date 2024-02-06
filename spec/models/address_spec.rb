@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Address, type: :model do
+RSpec.describe Address do
   describe '#address' do
     it 'return valid data for a given valid address' do
       location = create(:address, name: 'Home', street: '123 Jones St', city: 'Seattle', state: 'WA', zipcode: '98117')
