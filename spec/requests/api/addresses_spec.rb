@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Api::Addresses', type: :request do
+RSpec.describe 'Api::Addresses' do
   let(:location_attributes) { { name: 'Home', street: '12', city: 'Seattle', state: 'WA', zipcode: '98117' } }
 
   describe '#get' do
