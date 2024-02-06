@@ -1,0 +1,28 @@
+      <h4><%= heading %></h4>
+      <table class="table table-bordered">
+        <tr scope="row" ALIGN=TOP>  
+          <td>  
+            Time 
+          </td>
+          <td>
+            Conditions
+          </td>
+          <td>
+            Temp
+          </td>  
+        </tr>
+        <% forcasts.each do | forcast | %>
+        <tr scope="row" ALIGN=TOP>  
+          <td>  
+            <%= forcast[:dt].in_time_zone(timezone).strftime('%-I:%M %p (%Z)') %> 
+          </td>
+          <td>
+            <%= forcast[:description] %>
+          </td>
+          <td>
+            <%= forcast[:temp] %> F
+          </td>  
+        </tr>
+        
+        <% end %>
+      </table>

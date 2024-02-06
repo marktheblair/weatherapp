@@ -1,0 +1,35 @@
+  {
+    "type":"array",
+    "items":[
+      {
+        "type":"object",
+        "properties":  {
+          "id": {
+            "type":"integer"
+          },
+          "name": {
+            "type":"string"
+          },
+          "street": {
+            "type":"string"
+          },
+          "city": {
+            "type":"string"
+          },
+          "state": {
+            "type":"string"
+          },
+          "zipcode": {
+            "type":"string"
+          },
+          "created_at": {
+            "type":"string"
+          },
+          "updated_at": {
+            "type":"string"
+          }
+        }
+      }
+    ],
+    "required": ["id", "name", "street", "city", "state", "zipcode", "created_at", "updated_at"]
+}

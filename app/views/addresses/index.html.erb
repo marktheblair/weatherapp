@@ -1,0 +1,11 @@
+<%= render partial: "header", locals: { name: 'Addresses' } %>
+
+<ul class="list-group">
+  <% @addresses.each do |address| %>
+    <li class="list-group-item">
+      <%= link_to address.name, address %>
+    </li>
+  <% end %>
+</ul>
+
+

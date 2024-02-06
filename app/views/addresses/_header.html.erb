@@ -1,0 +1,25 @@
+<%
+links = [
+    { name: "Addresses", path: root_path },
+    { name: "New Address ", path: new_address_path },    
+  ];  
+%>  
+
+<div class="card">
+  <div class="card-body">
+    <div class="mb-3">  
+      <h1><%= name %></h1>
+    </div>
+    <div class="mb-3">  
+      <ul class="nav">
+        <% links.each do |link| %>
+          <% if link[:path] == request.path %>
+             <li class="nav-item"><%= link_to link[:name], link[:path], class: "nav-link disabled" %></li>
+          <% else %>
+             <li class="nav-item"><%= link_to link[:name], link[:path], class: "nav-link" %></li>
+          <% end %>   
+        <% end %>   
+      </ul>
+    </div>
+  </div>
+</div> 
