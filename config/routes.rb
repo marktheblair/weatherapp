@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   root "addresses#index"
   resources :addresses, except: [:edit, :update]
 
+  namespace :api do
+    resources :addresses, except: [:new, :edit, :update] 
+  end
 end

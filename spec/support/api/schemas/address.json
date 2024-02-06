@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "zipcode": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+
+    "weather": {
+      "type": "object",
+      "properties": {
+        "dt": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        },
+        "temp": {
+          "type": "number"
+        },
+        "temp_max": {
+          "type": "number"
+        },
+        "temp_min": {
+          "type": "number"
+        },
+        "forcast": {
+          "type": "array",
+          "items": [{
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string"
+              },
+              "forcasts": {
+                "type": "array",
+                "items": [{
+                  "type": "object",
+                  "properties": {
+                    "dt": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "temp": {
+                      "type": "number"
+                    }
+                  }
+                }],
+                "required": ["dt", "description", "temp"]
+              }
+            },
+            "required": [ "date", "forcasts"]
+          }]
+        }
+      },
+      "required": ["dt", "timezone", "description", "temp", "temp_max", "temp_min", "forcast"]
+    }
+  },
+  "required": ["id", "name", "street", "city", "state", "zipcode", "created_at", "updated_at", "weather"]
+}
