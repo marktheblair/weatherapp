@@ -1,0 +1,1 @@
+rdbg -n --open=vscode -c -- bin/rails s -p 3001

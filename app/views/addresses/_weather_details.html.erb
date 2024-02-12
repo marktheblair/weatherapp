@@ -11,7 +11,7 @@
       <table>
         <tr ALIGN=TOP>  
           <td >Time:</td> 
-          <td><%= weather[:dt].in_time_zone(weather[:timezone]).strftime('%-m/%-d/%Y %-I:%M %p (%Z)') %></td>
+          <td><%= weather[:dt].in_time_zone(weather[:timezone]).strftime('%-m/%-d/%Y, %-I:%M %p %Z') %></td>
         </tr>
         <tr ALIGN=TOP>  
           <td >Conditions:</td> 

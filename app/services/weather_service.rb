@@ -45,7 +45,8 @@ class WeatherService
 
     def weather_entry(weather, zipcode)
       { dt: weather.dt,
-        timezone: weather.timezone,
+        timezone_offset: weather.timezone,
+        timezone: Ziptz.new.time_zone_name(zipcode),
         description: weather.weather.first['description'],
         temp: weather.main.temp_f,
         temp_max: weather.main.temp_max_f,
@@ -53,20 +54,20 @@ class WeatherService
         forcast: build_forcast(client, weather.timezone, zipcode) }
     end
 
-    def build_forcast(client, timezone, zipcode)
+    def build_forcast(client, timezone_offset, zipcode)
       begin
         forcast = client.forcast(zip: zipcode)
       rescue OpenWeather::Errors::Fault => e
         Rails.logger.debug e.message
         return nil
       end
-      parse_forcast(forcast, timezone)
+      parse_forcast(forcast, timezone_offset)
     end
 
-    def parse_forcast(forcast, timezone)
+    def parse_forcast(forcast, timezone_offset)
       final_forcast = []
       forcast.list.each do |entry|
-        entry_date = entry.dt.getlocal(timezone).to_date
+        entry_date = entry.dt.getlocal(timezone_offset).to_date
         if final_forcast.blank? || final_forcast.last[:date] != entry_date
           final_forcast << { date: entry_date, forcasts: [forcast_entry(entry)] }
         else
