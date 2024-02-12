@@ -7,6 +7,17 @@ The purpose of this application is to show a working Ruby on Rails application t
 
 This [pull request](https://github.com/marktheblair/weatherapp/pull/1) shows all the added application code.
 
+### Screen Shots
+
+#### Home Page
+![Screenshot 2024-02-12 at 3 39 30 PM](https://github.com/marktheblair/weatherapp/assets/885281/bc30951f-7e46-4e7a-9b0f-9164fea14555)
+
+#### New Address Page
+![Screenshot 2024-02-12 at 3 39 57 PM](https://github.com/marktheblair/weatherapp/assets/885281/f2947446-ddee-4eeb-88ca-863425a12e19)
+
+#### Address Detail Page
+![Screenshot 2024-02-12 at 3 40 11 PM](https://github.com/marktheblair/weatherapp/assets/885281/d2384f8e-4aa1-4d93-aef4-24b025de9d30)
+
 ## Installing and Running the Application
 
 The following steps will install and application:
