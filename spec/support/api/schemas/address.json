@@ -34,8 +34,12 @@
           "type": "string"
         },
         "timezone": {
+          "type": "string"
+        },
+        "timezone_offset": {
           "type": "number"
         },
+
         "description": {
           "type": "string"
         },
@@ -79,7 +83,7 @@
           }]
         }
       },
-      "required": ["dt", "timezone", "description", "temp", "temp_max", "temp_min", "forcast"]
+      "required": ["dt", "timezone",  "timezone_offset", "description", "temp", "temp_max", "temp_min", "forcast"]
     }
   },
   "required": ["id", "name", "street", "city", "state", "zipcode", "created_at", "updated_at", "weather"]

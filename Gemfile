@@ -34,6 +34,9 @@ gem 'jbuilder'
 # API client for open weather
 gem 'open-weather-ruby-client'
 
+# Gem for translating zipcode to timezones
+gem 'ziptz'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
